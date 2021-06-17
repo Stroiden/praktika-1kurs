@@ -1,0 +1,265 @@
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+    <script src="C:\Users\27mak\OneDrive\Рабочий стол\pr\praktika-1kurs\Лабораторная_6\JavaScript\Script1.js"></script>
+    <script> 
+    function func() {
+        var elem = document.getElementById("test"); 
+        alert(elem.value);
+    }
+
+    function changeText(){
+        var elem = document.getElementById('myTekst');
+        elem.value = 'Измененный текст';
+    }
+
+    function switchImg(){
+        var elem = document.getElementById('img1'); 
+        elem.src = "https://lh3.googleusercontent.com/proxy/Wq4oKUdGchv6KKsqBZXLoTgAHSKc7YdWFNRizW48CrVxy3kwrTFe6eCFmhvNXCgwOY1Vzxukn5FIhU90b4sxfYqrOn9QxpdjEMHov6aOzCu6sCdKBNDl";
+    }
+
+    function sameText(elem){
+        alert(elem.value);
+    }
+
+    function chngText(elem){
+        elem.value = 'Измененный текст'
+    }
+
+    var cnt = 1;
+    function chngText2(elem){
+        if(cnt == 1) {
+            elem.value = 'Измененный текст'
+        } else {
+            elem.value = 'Измененный текст++'
+        }
+        cnt++;
+    }
+
+    function cangeButton(elem){
+        elem.value = 'Измененный текст'
+    }
+
+    function blockButton(elem){
+        elem.value = 'Измененный текст'
+        onclick.disabled = true;
+    }
+    
+    function switchImage(elem){
+        elem.src = "https://news.softodrom.ru/img/news/html5.png";
+    }
+    function switchImage2(elem){
+        elem.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png";
+    }
+
+    function switchColor (elem){
+        document.getElementById('switch').style.color = 'red';
+    }
+
+    function delInp(elem){
+        var elem = document.getElementById('text');
+        elem.style.fontSize = ' 0 ';
+    }
+
+    function retInp(elem){
+        var elem = document.getElementById('text');
+        elem.style.fontSize = '13';
+    }   
+
+    function textTable(){
+        var input = document.getElementById('colorText');
+        input.value = 'Я изменил свой текст и css';
+        document.getElementById('colorText').style.color = 'red';
+        input.style.fontSize = '50';
+    }
+
+    function blockStr(){
+        var input = document.getElementById('block');
+        input.value = 'Теперь нельзя нажать';
+        input.disabled = true;
+        }
+            function unblockStr(){
+            var input = document.getElementById('block');
+            input.disabled = false;
+            input.value = "Нажми на меня";
+    }
+
+    var click = 0;
+    function summClick(elem){
+        click += 1;
+        document.getElementById("click").innerHTML = click;
+    }
+    s++;
+
+    function textToLeft(){
+        var input = document.getElementById('right');
+        input.value = 'Теперь текст тут';
+        input.style.cssFloat = 'right';
+    }
+
+    function otherText(){
+        var input = document.getElementById('reworkText');
+        input.value = 'Теперь текст стал другой';
+    }
+
+    function switchInput() {
+        var input1 = document.getElementById('input1');
+        var input2 = document.getElementById('input2');
+        var input1Value = input1.value;
+        var input2Value = input2.value;
+        input1.value = input2Value;
+        input2.value = input1Value;   
+    }  
+
+    function sqrtNumber(){
+        var input3 = document.getElementById('number');
+        var input4 = document.getElementById('sqrt');
+        var number = Number(input3.value);
+        var sqare = number * number;
+        input4.value = sqare;
+    }
+
+    function sqrtNumberText(){
+        var input5 = document.getElementById('number1');
+        var input6 = document.getElementById('sqrt1');
+        var number1 = Number(input5.value);
+        var sqare1 = number1 * number1;
+        input6.value = sqare1;
+    }
+
+    function focusONButton(){
+        var focus = document.getElementById('focus');
+        focus.disabled = true;
+        document.onfocus.getElementById("focus").style.cursor; 
+    }
+
+
+    function tableNumbers(elem){
+        return elem.id;
+    }
+
+    function setInputField(elem){
+        var inpt = document.getElementById('clear');
+        var l = tableNumbers(elem);
+        inpt.value = inpt.value + l;
+    }
+
+    </script>
+    <style>
+    .button{cursor: crosshair;}
+    #clear {
+    width: 300px; 
+   } 
+   #sqrt1 {
+    width: 300px; 
+   } 
+   #sqrt {
+    width: 300px; 
+   } 
+    </style>
+</head>
+
+<body>
+    <button onclick = "alert('Привет!')" > Нажми на меня </button><br><br>
+    <button onmouseover = "alert('Привет!')"> Наведи на меня </button><br><br>
+    <button ondblclick = "alert('Привет!')"> Дважды нажми на меня </button><br><br>
+    <textarea onmouseout = "alert('Привет!')" > наведи на меня мышь  - затем убери </textarea><br><br>
+
+    <!--Вывод введенного текста в поле в диалоговом окне-->
+    <input type="text" value="" id="test">
+    <input type="submit" onclick="func()"><br><br>
+
+    <!--Изменение текста в поле-->
+    <input type="text" value="Мой текст" id="myTekst">
+    <input type="submit" onclick="changeText()"><br><br>
+
+    <!--Смена картинки при нажатии на кнопку-->
+    <img src="https://itproger.com/img/courses/1476977754.jpg" alt="img1" id="img1" width="200"><br>
+    <button onclick="switchImg()"> Нажми </button> <br><br>
+
+
+    <!--Текст в окне из поля-->
+    <input type = "text" onclick="sameText(this)" value="Мой текст"><br><br>
+
+    <!--Поменять текст-->
+    <input type = "text" onclick="chngText(this)" value="Мой текст"><br><br>
+
+    <!--Поменять текст 2 раза-->
+    <input type = "text" value="Мой текст" onclick="chngText2(this);" /><br><br>
+
+    <!--Поменяить надпись на кнопке-->
+    <input type="submit" onclick="cangeButton(this)" value="Нажми"/><br><br>
+
+    <!--Поменять надпись на кнопке и заблокировать ее-->
+    <input type="submit" onclick="blockButton(this)" value="Нажми"/><br><br>
+
+    <!--Смена картинки наведением курсора-->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png" id="img3"
+    width="200"
+    onmouseover="switchImage(this)" onmouseout="switchImage2(this)"><br><br>
+
+    <!--Смена цвета текста по нажатию кнопки-->
+    <input type="text" value="Мой текст" id="switch">
+    <input type="submit" onclick="switchColor()"><br><br>
+
+    <!--Удаление и возврат текстового поля-->
+    <input type="text" value="Мой текст" id="text">
+    <button onclick="delInp()">Нажми сначала на меня</button>
+    <button onclick="retInp()">Потом на меня</button><br><br>
+
+    <!--Сменить цвет текста и поле текста-->
+    <input type="text" value="Мой текст" id="colorText"/>
+    <button onclick="textTable()">Нажми на меня</button><br><br>
+
+    <!--Разблокировать и заблокировать кнопку-->
+    <input type="submit" onclick="blockStr()" value="Нажми на меня" id="block"/>
+    <input type="submit" onclick="unblockStr()" value="Нажми, чтобы разблокировать" id="unblosk";/><br><br>
+
+    <!--Кнопка считает количество кликов по ней-->
+    <button onclick="summClick()" value="" id='click'>0</button><br><br>
+
+    <!--Сместить поле текста вправо-->
+    <input type="text" value="Текст слева" id="right">
+    <button onclick="textToLeft()">Нажми чтобы сместить текст</button><br><br>
+
+    <!--Заменить содержимое строки нажатием кнопки-->
+    <input type="texp" value="мой текст" id="reworkText"/>
+    <button onclick="otherText()">Нажми</button><br><br>
+
+    <!--Обмен содержимого между инпутами-->
+    <input type="text" id="input1" value="Привет!">
+    <input type="text" id="input2" value="Пока!">
+    <button onclick="switchInput()">Нажми на меня</button><br><br>
+
+    <!--Возведение в квадрат-->
+    <input type="text" id="number" placeholder="Введите число"/>
+    <input type="text" id="sqrt" value="Здесь появится квадрат введенного числа" disabled />
+    <button onclick="sqrtNumber()">Нажмите чтобы возвести в квадрат ваше число</button><br><br>
+
+    <!--Возведение в квадрат учитывая что строка не может быть возведена в квадрат-->
+    <input type="text" id="number1" placeholder="Введите число"/><br>
+    <input type="text" id="sqrt1" value="Здесь появится квадрат введенного числа" disabled /><br>
+    <button onclick="sqrtNumberText()">Нажмите чтобы возвести в квадрат ваше число</button><br><br>
+
+    <!--Смена курсора при наведении на кнопку-->
+    <button onclick="focusONButton()" id="focus" class="button">Нажми на меня</button><br><br>
+
+    <!--Таблица с выводом содержимого кнопок-->
+    <input type="text" id="clear" value="" /><br><br>
+    <input type="button" onclick="setInputField(this)" id="+" value="Добавлю +"/><br>
+    <input type="button" onclick="setInputField(this)" id="-" value="Добавлю -"/><br>
+    <input type="button" onclick="setInputField(this)" id="/" value="Добавлю /"/><br>
+    <input type="button" onclick="setInputField(this)" id="*" value="Добавлю *"/><br><br>
+    <input type="button" onclick="setInputField(this)" id="1" value="Добавлю 1"/><br>
+    <input type="button" onclick="setInputField(this)" id="2" value="Добавлю 2"/><br>
+    <input type="button" onclick="setInputField(this)" id="3" value="Добавлю 3"/><br>
+    <input type="button" onclick="setInputField(this)" id="4" value="Добавлю 4"/><br>
+    <input type="button" onclick="setInputField(this)" id="5" value="Добавлю 5"/><br>
+    <input type="button" onclick="setInputField(this)" id="6" value="Добавлю 6"/><br>
+    <input type="button" onclick="setInputField(this)" id="7" value="Добавлю 7"/><br>
+    <input type="button" onclick="setInputField(this)" id="8" value="Добавлю 8"/><br>
+    <input type="button" onclick="setInputField(this)" id="9" value="Добавлю 9"/><br>
+    <input type="button" onclick="setInputField(this)" id="0" value="Добавлю 0"/>
+</body>
+</html>
