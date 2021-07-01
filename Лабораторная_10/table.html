@@ -1,0 +1,27 @@
+<html>
+<head></head>
+<body>
+	<form method="post" action="rabota_1.php">
+	Название таблицы:<input type="text" name="name" size="6"></br>
+	Цвет фона таблицы 
+		<select name="t-color"> 
+			<option value="white" style="background-color:white; color:black" checked > Белый
+			<option value="black" style="background-color:black; color:white"> Черный
+			<option value="red" style="background-color:red; color:white"> Красный
+			<option value="green" style="background-color:green; color:white"> Зелёный
+			<option value="blue" style="background-color:blue; color:white"> Синий
+		</select></br>
+	Формировать границу для таблицы 
+		<input type="checkbox" name="formatir"/></br>
+	Размер</br>
+		<input type="text" name="stolb" size="6"> столбцов</br>
+		<input type="text" name="strok" size="6"> строк</br>
+	Заполниность таблицы
+		<select name="t-color"> 
+			<option value="_ss" checked > Номерами строки и столбца в ячейке
+			<option value="_nulls" > Нули в ячейках
+			<option value="_null" > Оставить пустыми 
+			<option value="_stars" > Звёздочки в ячейках 
+	</form> 
+</body>
+</html>
